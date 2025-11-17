@@ -16,7 +16,7 @@ Bu sənəddə hər tələbə üçün ayrı-ayrı task-lar və onların təfsilat
 
 ## 🎬 Backend Tasks
 
-### Task 1: Movie CRUD Operations
+### Task 1: Movie CRUD Operations (Seadet)
 **Branch**: `feature/movie-crud`  
 **Çətinlik**: ⭐⭐ Orta
 
@@ -58,7 +58,7 @@ DELETE /api/v1/movies/:id      - Filmi sil
 
 ---
 
-### Task 2: Review System
+### Task 2: Review System (Murad)
 **Branch**: `feature/review-system`  
 **Çətinlik**: ⭐⭐ Orta
 
@@ -86,7 +86,7 @@ DELETE /api/v1/reviews/:id                 - Rəyi sil
 
 ---
 
-### Task 3: Watchlist & Favorites
+### Task 3: Watchlist & Favorites (Nuray)
 **Branch**: `feature/watchlist`  
 **Çətinlik**: ⭐⭐ Orta
 
@@ -106,7 +106,7 @@ DELETE /api/v1/users/:userId/watchlist/:movieId  - Watchlist-dən sil
 
 ---
 
-### Task 4: Search & Filter Engine
+### Task 4: Search & Filter Engine (Nigar)
 **Branch**: `feature/search-filter`  
 **Çətinlik**: ⭐⭐⭐ Çətin
 
@@ -131,7 +131,7 @@ GET /api/v1/movies?genre=Action&year=2010&minRating=7
 
 ---
 
-### Task 5: Sorting & Pagination
+### Task 5: Sorting & Pagination (Ilkana)
 **Branch**: `feature/sorting-pagination`  
 **Çətinlik**: ⭐⭐⭐ Çətin
 
@@ -164,7 +164,7 @@ GET /api/v1/movies?page=2&limit=10&sortBy=rating&sortOrder=desc
 
 ---
 
-### Task 6: Rating Calculation & Statistics
+### Task 6: Rating Calculation & Statistics (Sebiyye)
 **Branch**: `feature/rating-stats`  
 **Çətinlik**: ⭐⭐⭐ Çətin
 
@@ -199,7 +199,7 @@ GET /api/v1/stats/overview
 
 ---
 
-### Task 7: Recommendation Engine
+### Task 7: Recommendation Engine (Cabbar)
 **Branch**: `feature/recommendations`  
 **Çətinlik**: ⭐⭐⭐⭐ Çox Çətin
 
@@ -224,7 +224,7 @@ GET /api/v1/movies/:id/similar?limit=5
 
 ---
 
-### Task 8: Validation Layer (Zod)
+### Task 8: Validation Layer (Zod) (Omer )
 **Branch**: `feature/validation`  
 **Çətinlik**: ⭐⭐⭐ Çətin
 
@@ -303,7 +303,7 @@ logger.error({
 
 ---
 
-### Task 10: Advanced Request Logging
+### Task 10: Advanced Request Logging (Zehra )
 **Branch**: `feature/logging`  
 **Çətinlik**: ⭐⭐ Orta
 
@@ -324,7 +324,7 @@ ERROR: POST /api/v1/movies 400 - Validation failed
 
 ---
 
-### Task 11: Rate Limiting Middleware
+### Task 11: Rate Limiting Middleware (Dilgushe)
 **Branch**: `feature/rate-limiting`  
 **Çətinlik**: ⭐⭐⭐ Çətin
 
@@ -362,7 +362,7 @@ X-RateLimit-Reset: 1640000000
 
 ---
 
-### Task 12: Data Export & Import
+### Task 12: Data Export & Import (Valide)
 **Branch**: `feature/data-export`  
 **Çətinlik**: ⭐⭐ Orta
 
@@ -386,7 +386,7 @@ POST /api/v1/import/movies
 
 ---
 
-### Task 13: Analytics & Reports
+### Task 13: Analytics & Reports (Aga Selim)
 **Branch**: `feature/analytics`  
 **Çətinlik**: ⭐⭐⭐ Çətin
 
@@ -412,7 +412,7 @@ GET /api/v1/analytics/trends
 
 ## 🎨 Frontend Tasks
 
-### Task 14: Movie Listing & Details Pages
+### Task 14: Movie Listing & Details Pages (Eli Alizade)
 **Branch**: `feature/frontend-movies`  
 **Çətinlik**: ⭐⭐⭐ Çətin
 

@@ -480,7 +480,7 @@ GET /api/v1/analytics/trends
 
 ## 🎯 Task Seçim Strategiyası
 
-**Yeni başlayanlar üçün**: Task 1, 2, 3, 9, 10, 12  
+**Başlangic səviyyə**: Task 1, 2, 3, 9, 10, 12  
 **Orta səviyyə**: Task 4, 5, 6, 8, 11, 14, 15, 17  
 **Advanced**: Task 7, 13, 16  
 
@@ -498,5 +498,6 @@ Problem olarsa:
 1. README.md-yə bax
 2. Kod nümunələrinə bax (base code)
 3. Komanda üzvlərindən soruş
+4. Mellimden soruş
 
 Uğurlar! 🚀

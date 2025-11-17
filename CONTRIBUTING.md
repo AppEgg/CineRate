@@ -276,5 +276,5 @@ Closes #[task-number]
 1. Check existing code examples
 2. Read TASKS.md
 3. Ask team members
-
+4. Ask Teacher
 Happy coding! 🚀

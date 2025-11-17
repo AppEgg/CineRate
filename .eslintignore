@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Public files (frontend JavaScript)
+public/
+
+# Data files
+data/
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log

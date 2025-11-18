@@ -386,7 +386,7 @@ POST /api/v1/import/movies
 
 ---
 
-### Task 13: Analytics & Reports (Aga Selim)
+### Task 13: Analytics & Reports (Aga Salim)
 **Branch**: `feature/analytics`  
 **Çətinlik**: ⭐⭐⭐ Çətin
 

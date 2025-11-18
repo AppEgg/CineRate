@@ -97,3 +97,10 @@ export interface MovieSortOptions {
   sortBy?: 'title' | 'year' | 'rating' | 'createdAt';
   sortOrder?: 'asc' | 'desc';
 }
+
+export interface Universal {
+  id: string,
+  title: string,
+  genres?: Array<string>,
+  count?: number
+}

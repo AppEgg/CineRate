@@ -1,1 +1,109 @@
-[]
+[
+    {
+        "id": "550e8400-e29b-41d4-a716-446655440000",
+        "title": "The Shawshank Redemption",
+        "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+        "year": 1994,
+        "director": "Frank Darabont",
+        "genres": [
+            "Drama",
+            "Crime"
+        ],
+        "duration": 142,
+        "posterUrl": "https://example.com/posters/shawshank.jpg",
+        "trailerUrl": "https://example.com/trailers/shawshank.mp4",
+        "cast": [
+            "Tim Robbins",
+            "Morgan Freeman",
+            "Bob Gunton"
+        ],
+        "createdAt": "2025-10-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+        "id": "550e8400-e29b-41d4-a716-446655440001",
+        "title": "The Dark Knight",
+        "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests.",
+        "year": 2008,
+        "director": "Christopher Nolan",
+        "genres": [
+            "Action",
+            "Crime",
+            "Drama"
+        ],
+        "duration": 152,
+        "posterUrl": "https://example.com/posters/dark-knight.jpg",
+        "trailerUrl": "https://example.com/trailers/dark-knight.mp4",
+        "cast": [
+            "Christian Bale",
+            "Heath Ledger",
+            "Aaron Eckhart"
+        ],
+        "createdAt": "2025-09-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+        "id": "550e8400-e29b-41d4-a716-446655440002",
+        "title": "Inception",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea.",
+        "year": 2010,
+        "director": "Christopher Nolan",
+        "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+        ],
+        "duration": 148,
+        "posterUrl": "https://example.com/posters/inception.jpg",
+        "trailerUrl": "https://example.com/trailers/inception.mp4",
+        "cast": [
+            "Leonardo DiCaprio",
+            "Joseph Gordon-Levitt",
+            "Ellen Page"
+        ],
+        "createdAt": "2025-11-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+        "id": "550e8400-e29b-41d4-a716-446655440003",
+        "title": "Pulp Fiction",
+        "description": "The lives of two mob hitmen, a boxer, a gangster and his wife intertwine in four tales of violence and redemption.",
+        "year": 1994,
+        "director": "Quentin Tarantino",
+        "genres": [
+            "Crime",
+            "Drama"
+        ],
+        "duration": 154,
+        "posterUrl": "https://example.com/posters/pulp-fiction.jpg",
+        "trailerUrl": "https://example.com/trailers/pulp-fiction.mp4",
+        "cast": [
+            "John Travolta",
+            "Uma Thurman",
+            "Samuel L. Jackson"
+        ],
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+        "id": "550e8400-e29b-41d4-a716-446655440004",
+        "title": "Forrest Gump",
+        "description": "The presidencies of Kennedy and Johnson, the Vietnam War, and other historical events unfold from the perspective of an Alabama man.",
+        "year": 1994,
+        "director": "Robert Zemeckis",
+        "genres": [
+            "Drama",
+            "Romance"
+        ],
+        "duration": 142,
+        "posterUrl": "https://example.com/posters/forrest-gump.jpg",
+        "trailerUrl": "https://example.com/trailers/forrest-gump.mp4",
+        "cast": [
+            "Tom Hanks",
+            "Robin Wright",
+            "Gary Sinise"
+        ],
+        "createdAt": "2025-11-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z"
+    }
+]

@@ -1,1 +1,62 @@
-[]
+[
+    {
+        "id": "user-001",
+        "username": "john_doe",
+        "email": "john@example.com",
+        "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+        "id": "user-002",
+        "username": "jane_smith",
+        "email": "jane@example.com",
+        "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+        "id": "user-003",
+        "username": "michael_brown",
+        "email": "michael.brown@example.com",
+        "createdAt": "2024-01-05T10:15:30.000Z"
+    },
+    {
+        "id": "user-004",
+        "username": "sara_white",
+        "email": "sara.white@example.com",
+        "createdAt": "2024-01-07T12:40:00.000Z"
+    },
+    {
+        "id": "user-005",
+        "username": "david_clark",
+        "email": "david.clark@example.com",
+        "createdAt": "2024-01-10T08:05:15.000Z"
+    },
+    {
+        "id": "user-006",
+        "username": "emily_wilson",
+        "email": "emily.wilson@example.com",
+        "createdAt": "2024-01-12T14:22:50.000Z"
+    },
+    {
+        "id": "user-007",
+        "username": "robert_taylor",
+        "email": "robert.taylor@example.com",
+        "createdAt": "2024-01-13T09:55:00.000Z"
+    },
+    {
+        "id": "user-008",
+        "username": "laura_martin",
+        "email": "laura.martin@example.com",
+        "createdAt": "2024-01-15T16:30:25.000Z"
+    },
+    {
+        "id": "user-009",
+        "username": "kevin_lee",
+        "email": "kevin.lee@example.com",
+        "createdAt": "2024-01-17T11:05:45.000Z"
+    },
+    {
+        "id": "user-010",
+        "username": "olivia_harris",
+        "email": "olivia.harris@example.com",
+        "createdAt": "2024-01-20T07:40:10.000Z"
+    }
+]

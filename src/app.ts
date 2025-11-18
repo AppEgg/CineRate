@@ -3,6 +3,7 @@ import path from 'path';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler';
 import { requestLogger } from './middleware/requestLogger';
 import { logger } from './utils/logger';
+import route from './routers/analytic.routes';
 
 /**
  * Create and configure Express application
@@ -31,6 +32,9 @@ export const createApp = (): Application => {
 
   // API routes will be added here by students
   // Example: app.use('/api/v1/movies', movieRoutes);
+
+  //* Analytics & Reports 
+  app.use('/api/v1/analytics', route)
 
   // 404 handler - must be after all routes
   app.use(notFoundHandler);

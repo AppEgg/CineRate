@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": "1",
+    "title": "Movie A",
+    "description": "jfbwebwjev;welvn dvbd;j v",
+    "year": 2010,
+    "director": "James Cameron",
+    "genres": ["Action", "Sci-Fi"],
+    "duration": 120,
+    "cast": [],
+    "createdAt": "",
+    "updatedAt": "",
+    "posterUrl": "",
+    "trailerUrl": "",
+    "rating": 8.5
+  },
+  {
+    "id": "2",
+    "title": "Movie B",
+    "description": "bjjv  ejkfbeiwbv",
+    "year": 2015,
+    "director": "Peter Jackson",
+    "genres": ["Adventure", "Fantasy"],
+    "duration": 150,
+    "cast": [],
+    "createdAt": "",
+    "updatedAt": "",
+    "posterUrl": "",
+    "trailerUrl": "",
+    "rating": 7.2
+  }
+]

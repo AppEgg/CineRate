@@ -14,6 +14,7 @@ export interface Movie {
   cast: string[];
   createdAt: string;
   updatedAt: string;
+  rating: number;
 }
 
 /**
@@ -86,6 +87,7 @@ export interface PaginatedResponse<T> {
  * Filter and sort options for movies
  */
 export interface MovieFilterOptions {
+  q?:string;
   genres?: string[];
   year?: number;
   minRating?: number;

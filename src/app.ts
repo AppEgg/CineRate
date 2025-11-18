@@ -3,6 +3,7 @@ import path from 'path';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler';
 import { requestLogger } from './middleware/requestLogger';
 import { logger } from './utils/logger';
+import { durationMiddleware } from './middleware/durationMiddleware';
 
 /**
  * Create and configure Express application
@@ -18,6 +19,7 @@ export const createApp = (): Application => {
   app.use(express.static(path.join(__dirname, '../public')));
 
   // Request logging
+  app.use(durationMiddleware);
   app.use(requestLogger);
 
   // Health check endpoint

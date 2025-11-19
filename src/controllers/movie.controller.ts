@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+import { Request, Response } from "express";
+import { getMovies } from "../service/movie.service";
+
+export const listMovies = (req: Request, res: Response) => {
+  const result = getMovies(req.query);
+  res.json({
+    success: true,
+    ...result,
+  });
+};
+=======
 import { movieService } from '@/services/movie.service';
 import { asyncHandler } from '@/middleware/errorHandler';
 import { sendCreated, sendSuccess } from '@/middleware/responseHandler';
@@ -80,3 +92,4 @@ export const watchlistController = {
     }
   }
 };
+>>>>>>> 1bd836fff904e4fa581d859e88990ac5ca76a042

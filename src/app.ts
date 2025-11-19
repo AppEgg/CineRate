@@ -52,3 +52,13 @@ export const createApp = (): Application => {
 
   return app;
 };
+import movieRoutes from "./routes/movie.routes";
+
+const app = express();
+app.use(express.json());
+
+// API routes
+app.use("/api/v1", movieRoutes);
+
+export default app;
+

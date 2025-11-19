@@ -1,6 +1,7 @@
 /**
  * Base Movie interface
  */
+
 export interface Movie {
   id: string;
   title: string;

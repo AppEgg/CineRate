@@ -12,6 +12,7 @@ import movieRoutes from '@/routes/movie.routes';
 import reviewRoutes from '@/routes/review.routes';
 import userRoutes from '@/routes/user.routes';
 import analyticRoute from '@/routes/analytic.routes';
+import { rateLimiterMiddleware, rateLimiter } from './middleware/rateLimiter';
 
 /**
  * Create and configure Express application
@@ -32,14 +33,52 @@ export const createApp = (): Application => {
   app.use(durationMiddleware);
   app.use(requestLogger);
 
-  // Health check endpoint
-  app.get('/health', (_req, res) => {
-    res.json({
-      status: 'ok',
-      timestamp: new Date().toISOString(),
-      uptime: process.uptime(),
-    });
+
+  // Rate limiting middleware examples with ioRedis and rate-limiter-flexible
+
+  //global rate limit 3 requests per 15 minutes
+  app.get('/test-rate-limit', rateLimiterMiddleware(), (req, res) => {
+    res.json({ message: 'This is a rate-limited endpoint.' });
   });
+  //post rate limit 5 requests per 15 minutes
+  app.post('/test-rate-limit-post', rateLimiterMiddleware(), (req, res) => {
+    res.json({ message: 'This is a rate-limited post endpoint.' });
+  });
+  //search rate limit 7 requests per 15 minutes
+  app.get('/search', rateLimiterMiddleware(), (req, res) => {
+    res.json({ message: 'This is a rate-limited post endpoint.' });
+  });
+
+
+  // Rate limiting middleware examples with express rate limit 
+  
+  // const windowMs = 15 * 60 * 1000;
+
+  // app.use(
+  //   rateLimiter({ windowMs, max: 7 }, "global")
+  // );
+
+  // app.get(
+  //   "/search",
+  //   rateLimiter({ windowMs, max: 10 }, "search"),
+  //   (req, res) => {
+  //     res.json({ message: "Search OK" });
+  //   });
+
+  // app.post("/login", rateLimiter({ windowMs, max: 2 }, "login"), (req, res) => {
+  //   res.json({ message: "POST OK" });
+  // });
+
+
+  // Health check endpoint
+  app.get('/health',
+    (_req, res) => {
+      res.json({
+        status: 'ok',
+        timestamp: new Date().toISOString(),
+        uptime: process.uptime(),
+      });
+    });
 
   // -----------------------------
   // API Routes

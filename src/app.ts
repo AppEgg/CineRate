@@ -14,7 +14,7 @@ import movieRoutes from '@/routes/movie.routes';
 import reviewRoutes from '@/routes/review.routes';
 import userRoutes from '@/routes/user.routes';
 import analyticRoute from './routers/analytic.routes';
-import { rateLimiterMiddleware } from './middleware/rateLimiter';
+import { rateLimiterMiddleware, rateLimiter } from './middleware/rateLimiter';
 import route from './routers/analytic.routes';
 
 /**
@@ -36,7 +36,9 @@ export const createApp = (): Application => {
   app.use(durationMiddleware);
   app.use(requestLogger);
 
-  // Rate limiting middleware examples with Redis
+
+  // Rate limiting middleware examples with ioRedis and rate-limiter-flexible
+
   //global rate limit 3 requests per 15 minutes
   app.get('/test-rate-limit', rateLimiterMiddleware(), (req, res) => {
     res.json({ message: 'This is a rate-limited endpoint.' });
@@ -50,6 +52,8 @@ export const createApp = (): Application => {
     res.json({ message: 'This is a rate-limited post endpoint.' });
   });
 
+
+  // Rate limiting middleware examples with express rate limit 
   
   // const windowMs = 15 * 60 * 1000;
 
@@ -67,6 +71,7 @@ export const createApp = (): Application => {
   // app.post("/login", rateLimiter({ windowMs, max: 2 }, "login"), (req, res) => {
   //   res.json({ message: "POST OK" });
   // });
+
 
   // Health check endpoint
   app.get('/health',

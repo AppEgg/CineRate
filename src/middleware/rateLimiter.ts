@@ -1,7 +1,7 @@
 
-//rate -limit with rate-limiter-flexible and ioredis // docker lazimdi
+//rate -limit with rate-limiter-flexible and ioredis rate-limiter-flexible // docker-compose.yml
 
-// import { Request, Response, NextFunction } from "express";
+import { Request, Response, NextFunction } from "express";
 import Redis from "ioredis";
 import { RateLimiterRedis } from "rate-limiter-flexible";
 
@@ -87,8 +87,7 @@ export const rateLimiterMiddleware = (
 
 
 
-//with express-rate-limit
-import { Request, Response, NextFunction } from "express";
+//with express rate limit
 
 type RateLimitConfig = {
     windowMs: number; // limit time

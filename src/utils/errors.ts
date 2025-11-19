@@ -7,6 +7,7 @@ export class AppError extends Error {
   public readonly statusCode: number;
   public readonly type: string;
   public readonly errors?: Record<string, string[]>;
+  public correlationId?: string; // AppError a correlationId elave edirik
 
   constructor(
     message: string,
@@ -22,6 +23,15 @@ export class AppError extends Error {
     Error.captureStackTrace(this, this.constructor);
   }
 
+  // CORRELATION ID UCUN BURDA YENI METHOD ELAVE ETMELIYIK
+
+  setCorrelationId(id: string) : this {
+    this.correlationId =id 
+    return this
+  }
+
+
+
   toProblemDetails(instance?: string): ProblemDetails {
     return {
       type: this.type,
@@ -30,6 +40,7 @@ export class AppError extends Error {
       detail: this.message,
       instance,
       errors: this.errors,
+      ...(this.correlationId && {correlationId : this.correlationId})
     };
   }
 }
@@ -78,3 +89,29 @@ export class InternalServerError extends AppError {
     super(message, 500, '/errors/internal');
   }
 }
+
+
+// RateLimitError
+
+export class RateLimitError extends AppError {
+  constructor(message : string = 'Too many requests'){
+    super(message ,429 , '/errors/rate-limit')
+  }
+}
+
+// ForbiddenError
+
+export class ForbiddenError extends AppError{
+  constructor(message : string = 'Access denied '){
+    super(message , 403 , '/errors/forbidden')
+  }
+}
+
+// ServiceUnavailableError
+export class ServiceUnavailableError extends AppError{
+  constructor(message : string = 'Service down'){
+    super(message , 503, '/errors/service-unavailable')
+  }
+}
+
+

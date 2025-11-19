@@ -1,6 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 import { AppError } from '../utils/errors';
 import { logger } from '../utils/logger';
+import { ErrorMonitoring } from '@/utils/ErrorMonitoring';
+
+
 
 /**
  * Async handler wrapper to catch errors in async route handlers
@@ -23,15 +26,34 @@ export const errorHandler = (
   res: Response,
   _next: NextFunction
 ) => {
+
+    const correlationId = req.id
+
+   if (err instanceof AppError) {
+    err.setCorrelationId(correlationId);
+  }
+
+   ErrorMonitoring.trackError({
+    correlationId,
+    error: err,
+    url: req.url,
+    method: req.method,
+    statusCode: err instanceof AppError ? err.statusCode : 500,
+    userId: req.userId,
+    query: req.query,
+    params: req.params,
+    body: req.body
+  });
+
   // Log error
   logger.error({
-    err,
-    req: {
-      method: req.method,
-      url: req.url,
-      params: req.params,
-      query: req.query,
-    },
+    correlationId,
+    error: err.message,
+    stack : err.stack,
+    url: req.url,
+    method: req.method,
+    userId : req.userId,
+    timeStamp : new Date().toISOString()
   });
 
   // Handle known application errors
@@ -51,6 +73,7 @@ export const errorHandler = (
       status: 500,
       detail: process.env.NODE_ENV === 'production' ? 'An unexpected error occurred' : err.message,
       instance: req.url,
+      correlationId
     },
   });
 };

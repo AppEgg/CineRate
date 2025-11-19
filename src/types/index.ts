@@ -1,6 +1,7 @@
 /**
  * Base Movie interface
  */
+
 export interface Movie {
   id: string;
   title: string;
@@ -97,3 +98,5 @@ export interface MovieSortOptions {
   sortBy?: 'title' | 'year' | 'rating' | 'createdAt';
   sortOrder?: 'asc' | 'desc';
 }
+
+

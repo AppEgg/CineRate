@@ -2,7 +2,6 @@ import express, { Application } from 'express';
 import path from 'path';
 import { errorHandler, notFoundHandler, asyncHandler } from './middleware/errorHandler';
 import { requestLogger } from './middleware/requestLogger';
-import { logger } from './utils/logger';
 import { RateLimitError, ForbiddenError, ServiceUnavailableError } from './utils/errors';
 import { correlationMiddleware } from './middleware/correlationId';
 

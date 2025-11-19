@@ -143,4 +143,5 @@ export const storage = {
   reviews: new JsonStorage('reviews.json'),
   users: new JsonStorage('users.json'),
   watchlist: new JsonStorage('watchlist.json'),
+  favorites: new JsonStorage('favorites.json'),
 };

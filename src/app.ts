@@ -2,7 +2,13 @@ import express, { Application } from 'express';
 import path from 'path';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler';
 import { requestLogger } from './middleware/requestLogger';
+import movieRoutes from '@routes/movie.routes'
 import { logger } from './utils/logger';
+import { durationMiddleware } from './middleware/durationMiddleware';
+
+// Routers
+import movieRoutes from './routes/movie.routes';
+import favoriteRoutes from './routes/favorite.routes';
 
 /**
  * Create and configure Express application
@@ -18,6 +24,7 @@ export const createApp = (): Application => {
   app.use(express.static(path.join(__dirname, '../public')));
 
   // Request logging
+  app.use(durationMiddleware);
   app.use(requestLogger);
 
   // Health check endpoint
@@ -30,7 +37,12 @@ export const createApp = (): Application => {
   });
 
   // API routes will be added here by students
-  // Example: app.use('/api/v1/movies', movieRoutes);
+  app.use('/movies', movieRoutes);
+  // -----------------------------
+  // API Routes
+  // -----------------------------
+  app.use('/api/v1', movieRoutes);    // Movie routes
+  app.use('/api/v1', favoriteRoutes);         // Favorites routes
 
   // 404 handler - must be after all routes
   app.use(notFoundHandler);

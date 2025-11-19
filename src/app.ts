@@ -2,12 +2,15 @@ import express, { Application } from 'express';
 import path from 'path';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler';
 import { requestLogger } from './middleware/requestLogger';
+import { logger } from './utils/logger';
+
 import { durationMiddleware } from './middleware/durationMiddleware';
 
 // Routers
 import movieRoutes from '@/routes/movie.routes';
 import reviewRoutes from '@/routes/review.routes';
 import userRoutes from '@/routes/user.routes';
+import analyticRoute from './routers/analytic.routes';
 
 /**
  * Create and configure Express application
@@ -42,8 +45,10 @@ export const createApp = (): Application => {
   app.use(`${BasePath}/movies`, movieRoutes); // Movie routes
   app.use(`${BasePath}/reviews`, reviewRoutes); // Review routes
   app.use(`${BasePath}/users`, userRoutes); // Favorites routes
+  //* Analytics & Reports 
+  app.use(`${BasePath}/analytics`, route)
 
-  // 404 handler - must be after all routes`
+  // 404 handler - must be after all routes
   app.use(notFoundHandler);
 
   // Global error handler - must be last

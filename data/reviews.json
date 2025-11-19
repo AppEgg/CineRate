@@ -1,1 +1,112 @@
-[]
+[
+    {
+        "id": "rev001",
+        "movieId": "550e8400-e29b-41d4-a716-446655440000",
+        "userId": "user-004",
+        "rating": 9,
+        "title": "Excellent storytelling",
+        "content": "The movie had an amazing structure, deep characters, and very strong emotional moments. Definitely worth watching.",
+        "helpfulCount": 12,
+        "createdAt": "2025-01-10T14:23:00.000Z",
+        "updatedAt": "2025-01-10T14:23:00.000Z"
+    },
+    {
+        "id": "rev004",
+        "movieId": "550e8400-e29b-41d4-a716-446655440001",
+        "userId": "user-004",
+        "rating": 8,
+        "title": "Very enjoyable",
+        "content": "Great soundtrack and well-paced script. A few scenes felt unnecessary but overall amazing.",
+        "helpfulCount": 5,
+        "createdAt": "2025-02-05T13:20:30.000Z",
+        "updatedAt": "2025-02-05T13:20:30.000Z"
+    },
+    {
+        "id": "rev002",
+        "movieId": "550e8400-e29b-41d4-a716-446655440002",
+        "userId": "user-004",
+        "rating": 7,
+        "title": "Good but a bit slow",
+        "content": "Overall enjoyable, but the middle part felt too slow for my taste. Still, cinematography was top-notch.",
+        "helpfulCount": 3,
+        "createdAt": "2025-01-12T09:45:10.000Z",
+        "updatedAt": "2025-01-12T09:45:10.000Z"
+    },
+    {
+        "id": "rev003",
+        "movieId": "550e8400-e29b-41d4-a716-446655440003",
+        "userId": "user-005",
+        "rating": 10,
+        "title": "Masterpiece!",
+        "content": "From start to finish, everything was perfect. Acting, music, pacing — flawless. One of the best films I've ever seen.",
+        "helpfulCount": 27,
+        "createdAt": "2025-02-01T18:11:55.000Z",
+        "updatedAt": "2025-02-02T07:02:00.000Z"
+    },
+    {
+        "id": "rev005",
+        "movieId": "550e8400-e29b-41d4-a716-446655440004",
+        "userId": "user-007",
+        "rating": 6,
+        "title": "Average experience",
+        "content": "Some good moments, but weak character development. Could have been better.",
+        "helpfulCount": 2,
+        "createdAt": "2025-02-10T08:12:00.000Z",
+        "updatedAt": "2025-02-10T08:12:00.000Z"
+    },
+    {
+        "id": "rev006",
+        "movieId": "550e8400-e29b-41d4-a716-446655440004",
+        "userId": "user-007",
+        "rating": 9,
+        "title": "Surprisingly good!",
+        "content": "Went in with low expectations but it exceeded all of them. Great visuals and atmosphere.",
+        "helpfulCount": 11,
+        "createdAt": "2025-02-12T17:40:15.000Z",
+        "updatedAt": "2025-02-12T17:40:15.000Z"
+    },
+    {
+        "id": "rev007",
+        "movieId": "550e8400-e29b-41d4-a716-446655440003",
+        "userId": "user-006",
+        "rating": 4,
+        "title": "Not my type",
+        "content": "I found the movie too chaotic. The plot felt messy and confusing.",
+        "helpfulCount": 1,
+        "createdAt": "2025-02-15T11:05:20.000Z",
+        "updatedAt": "2025-02-15T11:05:20.000Z"
+    },
+    {
+        "id": "rev008",
+        "movieId": "550e8400-e29b-41d4-a716-446655440002",
+        "userId": "user-009",
+        "rating": 8,
+        "title": "Solid movie",
+        "content": "Good acting and interesting plot twists. A couple of pacing issues but enjoyable.",
+        "helpfulCount": 4,
+        "createdAt": "2025-02-17T19:33:47.000Z",
+        "updatedAt": "2025-02-17T19:33:47.000Z"
+    },
+    {
+        "id": "rev009",
+        "movieId": "550e8400-e29b-41d4-a716-446655440001",
+        "userId": "user-002",
+        "rating": 10,
+        "title": "Emotional and powerful",
+        "content": "This movie hit hard emotionally. Fantastic message and outstanding performances.",
+        "helpfulCount": 30,
+        "createdAt": "2025-02-20T09:10:05.000Z",
+        "updatedAt": "2025-02-20T09:10:05.000Z"
+    },
+    {
+        "id": "rev010",
+        "movieId": "550e8400-e29b-41d4-a716-446655440004",
+        "userId": "user-009",
+        "rating": 7,
+        "title": "Good but predictable",
+        "content": "A well-made movie but some plot twists were too obvious. Still worth watching.",
+        "helpfulCount": 6,
+        "createdAt": "2025-02-21T16:55:12.000Z",
+        "updatedAt": "2025-02-21T16:55:12.000Z"
+    }
+]

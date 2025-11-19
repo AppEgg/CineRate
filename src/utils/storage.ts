@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-
+import { Movie, Review, User, WatchlistItem } from '../types/index'
 /**
  * JSON Storage Utility
  * Handles reading and writing JSON files for data persistence
@@ -143,4 +143,5 @@ export const storage = {
   reviews: new JsonStorage('reviews.json'),
   users: new JsonStorage('users.json'),
   watchlist: new JsonStorage('watchlist.json'),
+  favorites: new JsonStorage('favorites.json'),
 };

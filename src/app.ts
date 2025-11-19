@@ -7,6 +7,14 @@ import { RateLimitError, ForbiddenError, ServiceUnavailableError } from './utils
 import { correlationMiddleware } from './middleware/correlationId';
 
 
+import { durationMiddleware } from './middleware/durationMiddleware';
+
+// Routers
+import movieRoutes from '@/routes/movie.routes';
+import reviewRoutes from '@/routes/review.routes';
+import userRoutes from '@/routes/user.routes';
+import analyticRoute from './routers/analytic.routes';
+
 /**
  * Create and configure Express application
  */
@@ -23,6 +31,7 @@ export const createApp = (): Application => {
    app.use(correlationMiddleware);
 
   // Request logging
+  app.use(durationMiddleware);
   app.use(requestLogger);
 
   // Health check endpoint
@@ -34,8 +43,15 @@ export const createApp = (): Application => {
     });
   });
 
-  // API routes will be added here by students
-  // Example: app.use('/api/v1/movies', movieRoutes);
+  // -----------------------------
+  // API Routes
+  // -----------------------------
+  const BasePath = '/api/v1';
+  app.use(`${BasePath}/movies`, movieRoutes); // Movie routes
+  app.use(`${BasePath}/reviews`, reviewRoutes); // Review routes
+  app.use(`${BasePath}/users`, userRoutes); // Favorites routes
+  //* Analytics & Reports 
+  app.use(`${BasePath}/analytics`, route)
 
     app.get('/test/rate-limit', asyncHandler(async (_req, _res) => {
     throw new RateLimitError();

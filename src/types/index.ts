@@ -15,6 +15,7 @@ export interface Movie {
   cast: string[];
   createdAt: string;
   updatedAt: string;
+  rating: number;
 }
 
 /**
@@ -52,6 +53,14 @@ export interface WatchlistItem {
   addedAt: string;
 }
 
+export interface FavoriteItem {
+  id: string;
+  userId: string;
+  movieId: string;
+  addedAt: string;
+}
+
+
 /**
  * Movie statistics
  */
@@ -87,6 +96,7 @@ export interface PaginatedResponse<T> {
  * Filter and sort options for movies
  */
 export interface MovieFilterOptions {
+  q?:string;
   genres?: string[];
   year?: number;
   minRating?: number;
@@ -99,4 +109,9 @@ export interface MovieSortOptions {
   sortOrder?: 'asc' | 'desc';
 }
 
-
+export interface Universal {
+  id: string,
+  title: string,
+  genres?: Array<string>,
+  count?: number
+}

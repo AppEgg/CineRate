@@ -27,7 +27,7 @@ export const errorHandler = (
   _next: NextFunction
 ) => {
 
-    const correlationId = req.id
+    const correlationId = req.id as string || 'unknown'
 
    if (err instanceof AppError) {
     err.setCorrelationId(correlationId);

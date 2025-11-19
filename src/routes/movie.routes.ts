@@ -14,4 +14,3 @@ router.post('/:movieId/reviews', reviewController.create);
 router.get('/:movieId/reviews', reviewController.getByMovieId);
 
 export default router;
->>>>>>> 1bd836fff904e4fa581d859e88990ac5ca76a042

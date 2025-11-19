@@ -2,8 +2,13 @@ import express, { Application } from 'express';
 import path from 'path';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler';
 import { requestLogger } from './middleware/requestLogger';
-import { logger } from './utils/logger';
-import { rateLimiter } from './middleware/rateLimiter';
+import { durationMiddleware } from './middleware/durationMiddleware';
+
+// Routers
+// import movieRoutes from '@/routes/movie.routes';
+// import reviewRoutes from '@/routes/review.routes';
+// import userRoutes from '@/routes/user.routes';
+import { rateLimiter, rateLimiterMiddleware } from './middleware/rateLimiter';
 
 /**
  * Create and configure Express application
@@ -19,28 +24,40 @@ export const createApp = (): Application => {
   app.use(express.static(path.join(__dirname, '../public')));
 
   // Request logging
+  app.use(durationMiddleware);
   app.use(requestLogger);
 
   // Rate limiting middleware examples with Redis
-  // app.get('/test-rate-limit', rateLimiterMiddleware(2, 60), (req, res) => {
-  //   res.json({ message: 'This is a rate-limited endpoint.' });
-  // });
-  const windowMs = 15 * 60 * 1000;
-
-  app.use(
-    rateLimiter({ windowMs, max: 7 }, "global")
-  );
-
-  app.get(
-    "/search",
-    rateLimiter({ windowMs, max: 10 }, "search"),
-    (req, res) => {
-      res.json({ message: "Search OK" });
-    });
-
-  app.post("/login", rateLimiter({ windowMs, max: 2 }, "login"), (req, res) => {
-    res.json({ message: "POST OK" });
+  //global rate limit 3 requests per 15 minutes
+  app.get('/test-rate-limit', rateLimiterMiddleware(), (req, res) => {
+    res.json({ message: 'This is a rate-limited endpoint.' });
   });
+  //post rate limit 5 requests per 15 minutes
+  app.post('/test-rate-limit-post', rateLimiterMiddleware(), (req, res) => {
+    res.json({ message: 'This is a rate-limited post endpoint.' });
+  });
+  //search rate limit 7 requests per 15 minutes
+  app.get('/search', rateLimiterMiddleware(), (req, res) => {
+    res.json({ message: 'This is a rate-limited post endpoint.' });
+  });
+
+  
+  // const windowMs = 15 * 60 * 1000;
+
+  // app.use(
+  //   rateLimiter({ windowMs, max: 7 }, "global")
+  // );
+
+  // app.get(
+  //   "/search",
+  //   rateLimiter({ windowMs, max: 10 }, "search"),
+  //   (req, res) => {
+  //     res.json({ message: "Search OK" });
+  //   });
+
+  // app.post("/login", rateLimiter({ windowMs, max: 2 }, "login"), (req, res) => {
+  //   res.json({ message: "POST OK" });
+  // });
 
   // Health check endpoint
   app.get('/health',
@@ -52,10 +69,15 @@ export const createApp = (): Application => {
       });
     });
 
-  // API routes will be added here by students
-  // Example: app.use('/api/v1/movies', movieRoutes);
+  // -----------------------------
+  // API Routes
+  // -----------------------------
+  const BasePath = '/api/v1';
+  // app.use(`${BasePath}/movies`, movieRoutes); // Movie routes
+  // app.use(`${BasePath}/reviews`, reviewRoutes); // Review routes
+  // app.use(`${BasePath}/users`, userRoutes); // Favorites routes
 
-  // 404 handler - must be after all routes
+  // 404 handler - must be after all routes`
   app.use(notFoundHandler);
 
   // Global error handler - must be last
@@ -63,3 +85,13 @@ export const createApp = (): Application => {
 
   return app;
 };
+import movieRoutes from "./routes/movie.routes";
+
+const app = express();
+app.use(express.json());
+
+// API routes
+app.use("/api/v1", movieRoutes);
+
+export default app;
+

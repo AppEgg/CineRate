@@ -1,11 +1,9 @@
 import express, { Application } from 'express';
 import path from 'path';
-import { errorHandler, notFoundHandler , asyncHandler } from './middleware/errorHandler';
+import { errorHandler, notFoundHandler, asyncHandler } from './middleware/errorHandler';
 import { requestLogger } from './middleware/requestLogger';
-import { logger } from './utils/logger';
 import { RateLimitError, ForbiddenError, ServiceUnavailableError } from './utils/errors';
 import { correlationMiddleware } from './middleware/correlationId';
-
 
 import { durationMiddleware } from './middleware/durationMiddleware';
 
@@ -13,9 +11,8 @@ import { durationMiddleware } from './middleware/durationMiddleware';
 import movieRoutes from '@/routes/movie.routes';
 import reviewRoutes from '@/routes/review.routes';
 import userRoutes from '@/routes/user.routes';
-import analyticRoute from './routers/analytic.routes';
+import analyticRoute from '@/routes/analytic.routes';
 import { rateLimiterMiddleware, rateLimiter } from './middleware/rateLimiter';
-import route from './routers/analytic.routes';
 
 /**
  * Create and configure Express application
@@ -30,7 +27,7 @@ export const createApp = (): Application => {
   // Serve static files from public directory
   app.use(express.static(path.join(__dirname, '../public')));
 
-   app.use(correlationMiddleware);
+  app.use(correlationMiddleware);
 
   // Request logging
   app.use(durationMiddleware);
@@ -90,24 +87,36 @@ export const createApp = (): Application => {
   app.use(`${BasePath}/movies`, movieRoutes); // Movie routes
   app.use(`${BasePath}/reviews`, reviewRoutes); // Review routes
   app.use(`${BasePath}/users`, userRoutes); // Favorites routes
-  //* Analytics & Reports 
-  app.use(`${BasePath}/analytics`, route)
+  //* Analytics & Reports
+  app.use(`${BasePath}/analytics`, analyticRoute);
 
-    app.get('/test/rate-limit', asyncHandler(async (_req, _res) => {
-    throw new RateLimitError();
-  }));
+  app.get(
+    '/test/rate-limit',
+    asyncHandler(async (_req, _res) => {
+      throw new RateLimitError();
+    })
+  );
 
-  app.get('/test/forbidden', asyncHandler(async (_req, _res) => {
-    throw new ForbiddenError();
-  }));
+  app.get(
+    '/test/forbidden',
+    asyncHandler(async (_req, _res) => {
+      throw new ForbiddenError();
+    })
+  );
 
-  app.get('/test/service-down', asyncHandler(async (_req, _res) => {
-    throw new ServiceUnavailableError();
-  }));
+  app.get(
+    '/test/service-down',
+    asyncHandler(async (_req, _res) => {
+      throw new ServiceUnavailableError();
+    })
+  );
 
-  app.get('/test/unknown-error', asyncHandler(async (_req, _res) => {
-    throw new Error('Unexpected server error!');
-  }));
+  app.get(
+    '/test/unknown-error',
+    asyncHandler(async (_req, _res) => {
+      throw new Error('Unexpected server error!');
+    })
+  );
 
   // 404 handler - must be after all routes
   app.use(notFoundHandler);

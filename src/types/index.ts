@@ -52,6 +52,14 @@ export interface WatchlistItem {
   addedAt: string;
 }
 
+export interface FavoriteItem {
+  id: string;
+  userId: string;
+  movieId: string;
+  addedAt: string;
+}
+
+
 /**
  * Movie statistics
  */

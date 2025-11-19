@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": "movie_1",
+    "title": "Inception",
+    "description": "A mind-bending thriller about dream infiltration.",
+    "year": 2010,
+    "director": "Christopher Nolan",
+    "genres": ["Sci-Fi", "Thriller"],
+    "duration": 148,
+    "cast": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page"],
+    "createdAt": "2025-11-17T20:00:00.000Z",
+    "updatedAt": "2025-11-17T20:00:00.000Z"
+  },
+  {
+    "id": "movie_2",
+    "title": "The Matrix",
+    "description": "A hacker discovers reality is a simulation.",
+    "year": 1999,
+    "director": "The Wachowskis",
+    "genres": ["Action", "Sci-Fi"],
+    "duration": 136,
+    "cast": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"],
+    "createdAt": "2025-11-17T20:05:00.000Z",
+    "updatedAt": "2025-11-17T20:05:00.000Z"
+  }
+]

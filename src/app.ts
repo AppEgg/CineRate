@@ -2,7 +2,7 @@ import express, { Application } from 'express';
 import path from 'path';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler';
 import { requestLogger } from './middleware/requestLogger';
-import { logger } from './utils/logger';
+import movieRoutes from '@routes/movie.routes'
 
 /**
  * Create and configure Express application
@@ -30,7 +30,7 @@ export const createApp = (): Application => {
   });
 
   // API routes will be added here by students
-  // Example: app.use('/api/v1/movies', movieRoutes);
+  app.use('/movies', movieRoutes);
 
   // 404 handler - must be after all routes
   app.use(notFoundHandler);

@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-
+import { Movie, Review, User, WatchlistItem } from '../types/index'
 /**
  * JSON Storage Utility
  * Handles reading and writing JSON files for data persistence

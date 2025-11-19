@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "id": "user_1",
+    "username": "Nuray",
+    "email": "nuray@gmail.com",
+    "createdAt": "2025-11-17T20:00:00.000Z"
+  },
+  {
+    "id": "user_2",
+    "username": "Ilkane",
+    "email": "iamilkana.a@gmail.com",
+    "createdAt": "2025-11-17T20:05:00.000Z"
+  }
+]
+

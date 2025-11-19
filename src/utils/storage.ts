@@ -139,8 +139,9 @@ export class JsonStorage<T extends { id: string }> {
  * Storage factory - creates storage instances for different entities
  */
 export const storage = {
-  movies: new JsonStorage<Movie>('movies.json'),
-  reviews: new JsonStorage<Review>('reviews.json'),
-  users: new JsonStorage<User>('users.json'),
-  watchlist: new JsonStorage<WatchlistItem>('watchlist.json'),
+  movies: new JsonStorage('movies.json'),
+  reviews: new JsonStorage('reviews.json'),
+  users: new JsonStorage('users.json'),
+  watchlist: new JsonStorage('watchlist.json'),
+  favorites: new JsonStorage('favorites.json'),
 };
